@@ -1,9 +1,10 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_shopping_app_ui/common/custom_appbar.dart';
 import 'package:flutter_shopping_app_ui/constants/text_font_style.dart';
 import 'package:flutter_shopping_app_ui/gen/colors.gen.dart';
-import 'package:flutter_shopping_app_ui/pages/widget/categories_widget.dart';
-import 'package:flutter_shopping_app_ui/pages/widget/items_widget.dart';
+import 'package:flutter_shopping_app_ui/pages/home/widget/categories_widget.dart';
+import 'package:flutter_shopping_app_ui/pages/home/widget/items_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,7 +14,27 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          CustomAppbar(),
+          CustomAppbar(
+            icon: Icons.sort,
+            title: 'XYZ Shop',
+            actionIcon: Badge(
+              backgroundColor: Colors.red,
+              padding: EdgeInsets.all(2),
+              label: Text(
+                '3',
+              ),
+              child: InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, 'cartPage');
+                },
+                child: Icon(
+                  Icons.shopping_bag_outlined,
+                  size: 30,
+                  color: AppColors.c4C53A5,
+                ),
+              ),
+            ),
+          ),
           Container(
             // height: 500,
             padding: EdgeInsets.only(top: 15),
@@ -58,9 +79,11 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 10,
+                  padding: EdgeInsets.only(
+                    left: 20,
+                    right: 20,
+                    top: 30,
+                    bottom: 8,
                   ),
                   child: Text(
                     'Categories',
@@ -69,9 +92,10 @@ class HomePage extends StatelessWidget {
                 ),
                 CategoriesWidget(),
                 Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 10,
+                  padding: EdgeInsets.only(
+                    left: 20,
+                    right: 20,
+                    top: 30,
                   ),
                   child: Text(
                     'Best Selling',
@@ -81,6 +105,29 @@ class HomePage extends StatelessWidget {
                 ItemsWidget(),
               ],
             ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.transparent,
+        onTap: (index) {},
+        height: 70,
+        color: AppColors.c4C53A5,
+        items: [
+          Icon(
+            Icons.home,
+            size: 30,
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.shopping_cart,
+            size: 30,
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.list,
+            size: 30,
+            color: Colors.white,
           ),
         ],
       ),
