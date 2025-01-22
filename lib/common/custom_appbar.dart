@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shopping_app_ui/constants/text_font_style.dart';
 import 'package:flutter_shopping_app_ui/gen/colors.gen.dart';
-import 'package:badges/badges.dart' as badges;
 
 class CustomAppbar extends StatelessWidget {
   const CustomAppbar({super.key});
@@ -28,7 +27,21 @@ class CustomAppbar extends StatelessWidget {
             ),
           ),
           Spacer(),
-          Badge()
+          Badge(
+            backgroundColor: Colors.red,
+            padding: EdgeInsets.all(2),
+            label: Text(
+              '3',
+            ),
+            child: InkWell(
+              onTap: () {},
+              child: Icon(
+                Icons.shopping_bag_outlined,
+                size: 30,
+                color: AppColors.c4C53A5,
+              ),
+            ),
+          )
         ],
       ),
     );
