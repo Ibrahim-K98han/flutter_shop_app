@@ -15,4 +15,10 @@ class AppColors {
 
   /// Color: #FF4C53A5
   static const Color c4C53A5 = Color(0xFF4C53A5);
+
+  /// Color: #FFEDECF2
+  static const Color cEDECF2 = Color(0xFFEDECF2);
+
+  /// Color: #FFffffff
+  static const Color scaffoldColor = Color(0xFFFFFFFF);
 }

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <colors>
+    <color name="scaffoldColor">#FFffffff</color>
     <color name="c4C53A5">#FF4C53A5</color>
+    <color name="cEDECF2">#FFEDECF2</color>
 </colors>
